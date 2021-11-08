@@ -71,6 +71,8 @@ if np.logical_or(boundBoxThresh-3>mean_y_max_bound, mean_y_max_bound>boundBoxThr
 #now plot the layout of the sampling points
 #taken from groupMAIA.py
 def MAIAscatterPlot(convertedMAIAtable):
+    import matplotlib
+    matplotlib.use('Agg')
     import seaborn as sns
     import matplotlib.pyplot as plt
     
@@ -93,6 +95,9 @@ def MAIAscatterPlot(convertedMAIAtable):
     #plt.show()
     return fig
 #it doesn't actually matter if it is converted
+#maybe necessary here too?
+import matplotlib
+matplotlib.use('Agg')
 outDataFigure=MAIAscatterPlot(df)
 outDataFigure.savefig('secondary/dataLayout.png',bbox_inches='tight',dpi=300)
 
